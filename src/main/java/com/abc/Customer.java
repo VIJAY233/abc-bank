@@ -23,6 +23,11 @@ public class Customer {
         return this;
     }
 
+    public void transferMoney(Account to, Account from, double amount){
+        to.transactions.add(new Transaction(amount));
+        from.transactions.add(new Transaction(-amount));
+    }
+
     public int getNumberOfAccounts() {
         return accounts.size();
     }
